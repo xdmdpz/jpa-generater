@@ -10,18 +10,19 @@ public class Contants {
     public static final String GENERATE_SUFFIX_CONTROLLER = "Controller.java";
 
 
-    public static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    public static final String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/generater?useUnicode=true&characterEncoding=utf-8";
-    public static final String JDBC_USERNAME = "root";
-    public static final String JDBC_PASSWORD = "";
-
     //副本目录
     public static final String GENERATE_CARBON = "/carbon";
-
     //项目别名
-    public static final String GENERATE_PROJECTNAME = "ayf.core";
-
+    public static final String GENERATE_PROJECTNAME = "yf.core";
     //数据库名称
-    public static final  String GENERATE_DATABASENAME = "generater";
+    public static final  String GENERATE_DATABASENAME = "jpagenerater";
+
+    public static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    public static final String JDBC_USERNAME = "root";
+    public static final String JDBC_PASSWORD = "123";
+    public static final String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/"+GENERATE_DATABASENAME+"?useUnicode=true&characterEncoding=utf-8";
+
+
+
 
 }

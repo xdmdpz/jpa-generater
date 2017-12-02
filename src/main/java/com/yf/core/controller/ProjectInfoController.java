@@ -1,7 +1,8 @@
 package com.yf.core.controller;
 
-import com.yf.common.entity.RestResponse;
-import com.yf.common.entity.RestResponseCodeEnum;
+
+import com.yf.core.base.RestResponse;
+import com.yf.core.base.RestResponseCodeEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

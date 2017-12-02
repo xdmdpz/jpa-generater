@@ -1,4 +1,4 @@
-package com.yf.common.entity;
+package com.yf.core.base;
 
 
 /**

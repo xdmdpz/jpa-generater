@@ -9,8 +9,8 @@ import org.apache.log4j.Logger;
 
 import com.${projectName}.service.${tableNameII}Service;
 import com.${projectName}.entity.${tableNameII};
-import com.${projectName}.common.dto.RestResponseCodeEnum;
-import com.${projectName}.common.dto.RestResponse;
+import com.${projectName}.base.RestResponseCodeEnum;
+import com.${projectName}.base.RestResponse;
 
 /**
 * Created by if on 2017/11/22.
