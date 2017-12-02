@@ -39,6 +39,8 @@
     
 ### 代码生成器体验
 
+1. 项目仓库地址 ： https://github.com/xdmdpz/jpa-generater.git
+2. 建一个名字为 `jpagenerater`的数据库 字符集选`utf8mb4`
 1. 把 `resources/sql` 里面的两个文件（`schema.sql``data.sql`）复制到 `resource/`目录下
 2. `schema.sql`里面注释的sql取消注释 改成你需要的数据结构
     
