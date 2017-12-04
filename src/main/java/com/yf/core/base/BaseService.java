@@ -1,5 +1,6 @@
 package com.yf.core.base;
 
+import com.yf.uitls.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,13 +24,26 @@ public abstract class BaseService<T extends BaseEntity,R extends JpaRepository<T
 	private R repository;
 
 	/**
-	* 保存
-	* @param entity
-	*/
+	 * 新增
+	 *
+	 * @param entity
+	 */
 	@Transactional(readOnly = false)
-	public void save(T entity) {
-		entity.setUpdateTime(new Date());
-		repository.saveAndFlush(entity);
+	public void create(T entity) {
+		repository.save(entity);
+
+	}
+
+	/**
+	 * 更新
+	 *
+	 * @param entity
+	 */
+	@Transactional(readOnly = false)
+	public void update(T entity) {
+		T update = repository.findOne((ID) entity.id);
+		BeanUtils.copyProperties(entity, update, new String[]{"id","createTime", "delTag"});
+		repository.saveAndFlush(update);
 	}
 
 	/**

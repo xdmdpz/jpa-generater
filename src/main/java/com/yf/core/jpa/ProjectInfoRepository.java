@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
 @Repository
 public interface ProjectInfoRepository extends JpaRepository<ProjectInfo, String>{
 
-
 	
 }
 

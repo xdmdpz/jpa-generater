@@ -50,23 +50,39 @@ public class ProjectInfoController {
 	}
 
 	/**
-	* 保存
+	* 新增
 	*
 	* @param entity 新增实体，前端数据需要 JSON.stringify(data)
 	* @param response
 	* @return
 	*/
 	@PostMapping
-	public RestResponse save(@RequestBody ProjectInfo entity, RestResponse response) {
+	public RestResponse create(@RequestBody ProjectInfo entity, RestResponse response) {
 		try {
-			_ProjectInfoService.save(entity);
+			_ProjectInfoService.create(entity);
 			response.builder(RestResponseCodeEnum.SUCCESS, "添加成功", null);
 		} catch (Exception e) {
 			response.builder(RestResponseCodeEnum.FAILED, "系统出现bug:" + e.getMessage(), null);
 		}
 		return response;
 	}
-
+	/**
+	 * 修改
+	 *
+	 * @param entity 修改实体，前端数据需要 JSON.stringify(data)
+	 * @param response
+	 * @return
+	 */
+	@PostMapping
+	public RestResponse update(@RequestBody ProjectInfo entity, RestResponse response) {
+		try {
+			_ProjectInfoService.update(entity);
+			response.builder(RestResponseCodeEnum.SUCCESS, "添加成功", null);
+		} catch (Exception e) {
+			response.builder(RestResponseCodeEnum.FAILED, "系统出现bug:" + e.getMessage(), null);
+		}
+		return response;
+	}
 	/**
 	* 删除
 	*

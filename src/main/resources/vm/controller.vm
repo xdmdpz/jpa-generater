@@ -48,16 +48,34 @@ public class ${tableNameII}Controller {
 	}
 
 	/**
-	* 保存
+	* 新增
 	*
 	* @param entity 新增实体，前端数据需要 JSON.stringify(data)
 	* @param response
 	* @return
 	*/
 	@PostMapping
-	public RestResponse save(@RequestBody ${tableNameII} entity, RestResponse response) {
+	public RestResponse create(@RequestBody ${tableNameII} entity, RestResponse response) {
 		try {
-			_${tableNameII}Service.save(entity);
+			_${tableNameII}Service.create(entity);
+			response.builder(RestResponseCodeEnum.SUCCESS, "添加成功", null);
+		} catch (Exception e) {
+			response.builder(RestResponseCodeEnum.FAILED, "系统出现bug:" + e.getMessage(), null);
+		}
+		return response;
+	}
+
+	/**
+	* 更新
+	*
+	* @param entity 更新实体，前端数据需要 JSON.stringify(data)
+	* @param response
+	* @return
+	*/
+	@PatchMapping
+	public RestResponse update(@RequestBody ${tableNameII} entity, RestResponse response) {
+		try {
+			_${tableNameII}Service.update(entity);
 			response.builder(RestResponseCodeEnum.SUCCESS, "添加成功", null);
 		} catch (Exception e) {
 			response.builder(RestResponseCodeEnum.FAILED, "系统出现bug:" + e.getMessage(), null);

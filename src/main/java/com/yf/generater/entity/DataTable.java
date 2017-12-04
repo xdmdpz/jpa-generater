@@ -2,7 +2,6 @@ package com.yf.generater.entity;
 
 
 
-
 import com.yf.generater.tools.StringHelper;
 
 import java.util.ArrayList;
@@ -45,9 +44,9 @@ public class DataTable {
                     //System.out.print(c.GetKey() + ":" + c.GetValue() + "  ");
                     String key = c.GetKey();
                     if ("ColumnName".equals(key)) {
-                        row.setColumnName(c.GetValue().toString());
+                        row.setColumnName(StringHelper.underlineToCamel(c.GetValue().toString()));
                         //转换首字符大写
-                        row.setColumnNameII(StringHelper.toFirstCharUpperCase(c.GetValue().toString()));
+                        row.setColumnNameII(StringHelper.toFirstCharUpperCase(StringHelper.underlineToCamel(c.GetValue().toString())));
                         row.setColumn_name(c.GetValue().toString());
 
                     }

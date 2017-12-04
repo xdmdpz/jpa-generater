@@ -1,16 +1,13 @@
 package com.yf.generater.tools;
 
-
-
-import com.yf.generater.entity.DataColumn;
-import com.yf.generater.entity.DataRow;
-import com.yf.generater.entity.DataTable;
-import com.yf.generater.utils.Contants;
+import com.mi.packageManagement.velocity.entity.DataColumn;
+import com.mi.packageManagement.velocity.entity.DataRow;
+import com.mi.packageManagement.velocity.entity.DataTable;
+import com.mi.packageManagement.velocity.utils.Contants;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class DbHepler {
     /**
