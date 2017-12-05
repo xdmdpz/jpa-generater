@@ -11,6 +11,8 @@ public class ${tableNameII} extends BaseEntity<String> implements Serializable{
     #foreach($item in $columnlist)
         #if(!$item.column_name.equals("create_time") &&
         !$item.column_name.equals("update_time") &&
+        !$item.column_name.equals("create_by") &&
+        !$item.column_name.equals("update_by") &&
         !$item.column_name.equals("del_tag")     &&
         !$item.column_name.equals($id_name))
             ${item.desc}
@@ -35,7 +37,9 @@ public class ${tableNameII} extends BaseEntity<String> implements Serializable{
     #foreach($item in $columnlist)
         #if(!$item.column_name.equals("create_time") &&
         !$item.column_name.equals("update_time") &&
-        !$item.column_name.equals("del_tag")  &&
+        !$item.column_name.equals("create_by") &&
+        !$item.column_name.equals("update_by") &&
+        !$item.column_name.equals("del_tag")     &&
         !$item.column_name.equals($id_name))
             public void set${item.columnNameII}(${item.type} ${item.columnName}){
             this.${item.columnName} = ${item.columnName};

@@ -9,6 +9,7 @@ public class RestResponse {
     private String code;
     private Object msg;
     private Object data;
+    private Object dicts;
 
     public String getCode() {
         return code;
@@ -34,6 +35,13 @@ public class RestResponse {
         this.data = data;
     }
 
+    public Object getDicts() {
+        return dicts;
+    }
+
+    public void setDicts(Object dicts) {
+        this.dicts = dicts;
+    }
 
     /**
      * 请求成功

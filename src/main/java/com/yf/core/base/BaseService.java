@@ -21,7 +21,7 @@ import java.util.List;
 public abstract class BaseService<T extends BaseEntity,R extends JpaRepository<T,ID> ,ID extends Serializable> {
 
 	@Autowired
-	private R repository;
+	protected R repository;
 
 	/**
 	 * 新增
